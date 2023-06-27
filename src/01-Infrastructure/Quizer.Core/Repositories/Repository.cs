@@ -1,9 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Quizer.Core.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -29,9 +31,20 @@ namespace Quizer.Core.Repositories
             return entity;
         }
 
-        public T Edit(T entity, EntityEntry<T> rules = null)
+        public T Edit(T entity, Action<EntityEntry<T>> rules = null)
         {
-            throw new NotImplementedException();
+            var entry = db.Entry(entity);
+            if (rules == null)
+                goto summary;
+
+            foreach (var propertyInfo in typeof(T).GetProperties().Where(p=>p.IsEditable()))
+            {
+                entry.Property(propertyInfo.Name).IsModified =false;
+            }
+            rules(entry);
+            summary:
+            entry.State = EntityState.Modified;
+            return entity;
         }
 
         public IQueryable<T> GetAll(Expression<Func<T, bool>> expression = null)

@@ -13,7 +13,7 @@ namespace Quizer.Core.Repositories
         IQueryable<T> GetAll(Expression<Func<T, bool>> expression = null);
         T GetFirst(Expression<Func<T, bool>> expression = null);
         T Add(T entity);
-        T Edit(T entity, EntityEntry<T> rules = null);
+        T Edit(T entity, Action<EntityEntry<T>> rules = null);
         void Remove(T entity);
         int Save();
     }
