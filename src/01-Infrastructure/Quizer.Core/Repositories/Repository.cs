@@ -42,6 +42,7 @@ namespace Quizer.Core.Repositories
                 entry.Property(propertyInfo.Name).IsModified =false;
             }
             rules(entry);
+
             summary:
             entry.State = EntityState.Modified;
             return entity;
