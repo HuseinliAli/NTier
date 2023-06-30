@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -7,6 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-   </ItemGroup>
+    <ProjectReference Include="..\..\01-Infrastructure\Quizer.Core\Quizer.Core.csproj" />
+
+  </ItemGroup>
 
 </Project>

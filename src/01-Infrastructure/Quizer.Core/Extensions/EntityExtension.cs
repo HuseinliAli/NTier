@@ -26,8 +26,7 @@ namespace Quizer.Core.Extensions
         }
 
         public static EntityEntry<TEntity> SetValue<TEntity, TProperty> (this EntityEntry<TEntity> entry, 
-            Expression<Func<TEntity, TProperty>> propertyExpression, 
-            TProperty value) where TEntity: class
+            Expression<Func<TEntity, TProperty>> propertyExpression, TProperty value) where TEntity: class
         {
             entry.Property(propertyExpression).IsModified =true;
             entry.Property(propertyExpression).CurrentValue = value;

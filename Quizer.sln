@@ -15,11 +15,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03-Business", "03-Business"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04-Presentation", "04-Presentation", "{E4A03757-0176-4988-85E6-CB37F1D3543A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizer.Core", "src\01-Infrastructure\Quizer.Core\Quizer.Core.csproj", "{4189F710-19B2-4788-A5D7-222A9D6DA59D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quizer.Core", "src\01-Infrastructure\Quizer.Core\Quizer.Core.csproj", "{4189F710-19B2-4788-A5D7-222A9D6DA59D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizer.Models", "src\01-Infrastructure\Quizer.Models\Quizer.Models.csproj", "{6A54674F-2B02-469E-9D06-9F00445F6B0C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quizer.Models", "src\01-Infrastructure\Quizer.Models\Quizer.Models.csproj", "{6A54674F-2B02-469E-9D06-9F00445F6B0C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizer.Api", "src\04-Presentation\Quizer.Api\Quizer.Api.csproj", "{0DC4DB84-6343-4038-98A3-480A7DCE9798}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quizer.Api", "src\04-Presentation\Quizer.Api\Quizer.Api.csproj", "{0DC4DB84-6343-4038-98A3-480A7DCE9798}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizer.Application", "src\03-Business\Quizer.Application\Quizer.Application.csproj", "{3E68365F-B89D-4D32-8EB2-1BE97D57A627}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{0DC4DB84-6343-4038-98A3-480A7DCE9798}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DC4DB84-6343-4038-98A3-480A7DCE9798}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DC4DB84-6343-4038-98A3-480A7DCE9798}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E68365F-B89D-4D32-8EB2-1BE97D57A627}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E68365F-B89D-4D32-8EB2-1BE97D57A627}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E68365F-B89D-4D32-8EB2-1BE97D57A627}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E68365F-B89D-4D32-8EB2-1BE97D57A627}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,6 +57,7 @@ Global
 		{4189F710-19B2-4788-A5D7-222A9D6DA59D} = {DD247F7E-81B0-4D0A-830A-2EA16483680C}
 		{6A54674F-2B02-469E-9D06-9F00445F6B0C} = {DD247F7E-81B0-4D0A-830A-2EA16483680C}
 		{0DC4DB84-6343-4038-98A3-480A7DCE9798} = {E4A03757-0176-4988-85E6-CB37F1D3543A}
+		{3E68365F-B89D-4D32-8EB2-1BE97D57A627} = {DE1547C7-2941-42C3-BD1C-B4E249A9BBC8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4B07194A-8D5D-4A1F-AEFA-6465B0E77852}
