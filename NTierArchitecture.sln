@@ -15,11 +15,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{52
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{3E698E60-AFAA-4110-8D40-A7AD03A26330}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizer.Models", "src\Infrastructure\Quizer.Models\Quizer.Models.csproj", "{334FADCE-6FDA-4C78-B342-C34E98B639E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quizer.Models", "src\Infrastructure\Quizer.Models\Quizer.Models.csproj", "{334FADCE-6FDA-4C78-B342-C34E98B639E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizer.Core", "src\Infrastructure\Quizer.Core\Quizer.Core.csproj", "{CA2CD615-971F-486D-BABA-41ABC2A0CC9D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quizer.Core", "src\Infrastructure\Quizer.Core\Quizer.Core.csproj", "{CA2CD615-971F-486D-BABA-41ABC2A0CC9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizer.Api", "src\Presentation\Quizer.Api\Quizer.Api.csproj", "{3CAB5947-87C1-4FBF-BF28-06A91316F740}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quizer.Api", "src\Presentation\Quizer.Api\Quizer.Api.csproj", "{3CAB5947-87C1-4FBF-BF28-06A91316F740}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizer.Business", "src\Business\Quizer.Business\Quizer.Business.csproj", "{363D1CBB-B15D-4176-BBBC-EE5F8EA429AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{3CAB5947-87C1-4FBF-BF28-06A91316F740}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CAB5947-87C1-4FBF-BF28-06A91316F740}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CAB5947-87C1-4FBF-BF28-06A91316F740}.Release|Any CPU.Build.0 = Release|Any CPU
+		{363D1CBB-B15D-4176-BBBC-EE5F8EA429AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{363D1CBB-B15D-4176-BBBC-EE5F8EA429AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{363D1CBB-B15D-4176-BBBC-EE5F8EA429AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{363D1CBB-B15D-4176-BBBC-EE5F8EA429AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,6 +57,7 @@ Global
 		{334FADCE-6FDA-4C78-B342-C34E98B639E2} = {026D74DD-A774-40B2-BBD4-E9E2123C49C1}
 		{CA2CD615-971F-486D-BABA-41ABC2A0CC9D} = {026D74DD-A774-40B2-BBD4-E9E2123C49C1}
 		{3CAB5947-87C1-4FBF-BF28-06A91316F740} = {3E698E60-AFAA-4110-8D40-A7AD03A26330}
+		{363D1CBB-B15D-4176-BBBC-EE5F8EA429AC} = {5226B660-C777-4051-9869-EC4A3142BC05}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DBEBF822-2895-4A62-9D6D-763FA9D759AC}
