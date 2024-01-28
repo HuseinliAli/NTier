@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Quizer.Core.Extensions;
+using Quizer.Core.Repositories;
 using Quizer.Core.Services;
 using Quizer.Models.DTOs.Questions.Create;
+using Quizer.Models.Entities;
 
 namespace Quizer.Api.Controllers
 {
@@ -9,9 +12,11 @@ namespace Quizer.Api.Controllers
     public class QuestionsController:ControllerBase
     {
         private readonly IQuestionService _questionService;
-        public QuestionsController(IQuestionService questionService)
+        private readonly Repository<Question> _repo;
+        public QuestionsController(IQuestionService questionService,Repository<Question> repo)
         {
             _questionService=questionService;
+            _repo=repo;
         }
 
         [HttpPost]
@@ -26,6 +31,18 @@ namespace Quizer.Api.Controllers
         {
             var response = _questionService.GetById(id);
             return Ok(response);
+        }
+
+        [HttpPatch("{id:guid}")]
+        public IActionResult Edit(Guid id,string text)
+        {
+            var response = _repo.GetFirst(x=>x.Id==id);
+            //_repo.Edit(response); HttpPost Attribute
+            _repo.Edit(response, entry =>
+            {
+                entry.SetValue(x=>x.Text,text);
+            });
+            return NoContent();
         }
     }
 }
