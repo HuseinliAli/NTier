@@ -11,6 +11,7 @@ namespace Quizer.Models.Entities
     {
         public string Text { get; set; }
         public Guid QuestionSetId { get; set; }
+        public byte Point { get; set; }
     }
     public class QuestionSet : BaseEntity<Guid>
     {
