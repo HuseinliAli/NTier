@@ -62,25 +62,28 @@ namespace Quizer.Business.Services
                 .SetValue(x => x.QuestionSetId, request.QuestionSetId);
             });
 
-            var correctAnswer = _answerRepository.GetFirst(x => x.Id == request.CorrectAnswerId);
+            var correctAnswer = _answerRepository.GetFirst(x => x.Id == request.CorrectAnswerId,false);
 
-            _answerRepository.Edit(correctAnswer, entry => entry.SetValue(x => x.IsCorrect,true));
-
-            var otherAnswers = _answerRepository.GetAll(x => x.QuestionId==request.QuestionId && x.Id !=request.CorrectAnswerId).ToList();
-            foreach (var item in otherAnswers)
+            if(correctAnswer is not null)
             {
-                _answerRepository.Edit(item, entry =>
+                _answerRepository.Edit(correctAnswer, entry => entry.SetValue(x => x.IsCorrect, true));
+
+                var otherAnswers = _answerRepository.GetAll(x => x.QuestionId==request.QuestionId && x.Id !=request.CorrectAnswerId).ToList();
+                foreach (var item in otherAnswers)
                 {
-                    entry.SetValue(m => m.IsCorrect, false);
-                });
+                    _answerRepository.Edit(item, entry =>
+                    {
+                        entry.SetValue(m => m.IsCorrect, false);
+                    });
+                }
             }
         }
 
         public QuestionSaveAnswerResponseDto SaveAnswer(QuestionSaveAnswerDto request)
         {
-            var answer = _answerRepository.GetFirst(x => x.Id==request.Id);
+            var answer = _answerRepository.GetFirst(x => x.Id==request.Id,false);
 
-            if (answer==null)
+            if (answer is null)
             {
                 answer=request.ToEntity();
                 _answerRepository.Add(answer);

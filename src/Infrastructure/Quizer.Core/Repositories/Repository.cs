@@ -1,6 +1,7 @@
 ﻿ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using Quizer.Core.Exceptions;
 using Quizer.Core.Extensions;
 using System.Linq.Expressions;
 
@@ -53,12 +54,18 @@ namespace Quizer.Core.Repositories
             return query;
         }
 
-        public T GetFirst(Expression<Func<T, bool>> predicate = null)
+        public T GetFirst(Expression<Func<T, bool>> predicate = null,bool throwException = true)
         {
             var query = Table.AsQueryable();
             if(predicate!=null)
                 query = query.Where(predicate);
-            return query.FirstOrDefault();
+
+            var entity = query.FirstOrDefault();
+
+            if (entity is null && throwException)
+                throw new NotFoundException("Axtarılan qeyd sistemdə tapılmadı.");
+
+            return entity;
         }
 
         public void Remove(T entity)

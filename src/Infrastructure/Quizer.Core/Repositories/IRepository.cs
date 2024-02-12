@@ -13,7 +13,7 @@ namespace Quizer.Core.Repositories
         where T : class,new()
     {
         IQueryable<T> GetAll(Expression<Func<T,bool>> predicate =null);
-        T GetFirst(Expression<Func<T, bool>> predicate = null);
+        T GetFirst(Expression<Func<T, bool>> predicate = null, bool throwException = true);
         void Remove(T entity);
         T Add(T entity);
         T Edit(T entity, Action<EntityEntry<T>> rules = null);
